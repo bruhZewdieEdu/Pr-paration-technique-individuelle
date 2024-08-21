@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Didinho Barber</title>
+
+    <!-- Styles CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .services,
+        .gallery,
+        .contact,
+        .reservation {
+            margin-bottom: 40px;
+        }
+
+        .service-item,
+        .gallery-item {
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: white;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Calendrier FullCalendar */
+        #calendar {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <!-- En-tête -->
+    <header>
+        <h1>Didinho Barber</h1>
+        <p>Votre coiffeur de confiance à proximité</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#services" aria-label="Services">Services</a>
+        <a href="#gallery" aria-label="Galerie">Galerie</a>
+        <a href="#contact" aria-label="Contact">Contact</a>
+        <a href="#reservation" aria-label="Réservation">Réservation</a>
+    </nav>
+
+    <!-- Contenu Principal -->
+    <div class="container">
+        <!-- Section Connexion -->
+        <section id="login" class="login">
+            <h2>Connexion</h2>
+            <div class="form-container">
+                <form action="login.php" method="POST">
+                    <input type="text" name="username" placeholder="Nom d'utilisateur" required>
+                    <input type="password" name="password" placeholder="Mot de passe" required>
+                    <input type="submit" value="Se connecter">
+                </form>
+                <p>Pas encore inscrit? <a href="#signup">Inscrivez-vous ici</a>.</p>
+            </div>
+        </section>
+
+        <!-- Section Inscription -->
+        <section id="signup" class="signup">
+            <h2>Inscription</h2>
+            <div class="form-container">
+                <form action="signup.php" method="POST">
+                    <input type="text" name="username" placeholder="Nom d'utilisateur" required>
+                    <input type="password" name="password" placeholder="Mot de passe" required>
+                    <input type="submit" value="S'inscrire">
+                </form>
+            </div>
+        </section>
+        <!-- Section Services -->
+        <section id="services" class="services">
+            <h2>Nos Services</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Description</th>
+                        <th>Tarif</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Coupe Classique</td>
+                        <td>Coupe de cheveux traditionnelle pour hommes.</td>
+                        <td>20chf</td>
+                    </tr>
+                    <tr>
+                        <td>Coupe Dégradée</td>
+                        <td>Coupe de cheveux avec dégradé progressif.</td>
+                        <td>25chf</td>
+                    </tr>
+                    <tr>
+                        <td>Taille de Barbe</td>
+                        <td>Entretien et stylisation de la barbe.</td>
+                        <td>15chf</td>
+                    </tr>
+                    <tr>
+                        <td>Rasage à l'Ancienne</td>
+                        <td>Rasage complet avec serviette chaude.</td>
+                        <td>18chf</td>
+                    </tr>
+                    <tr>
+                        <td>Coloration</td>
+                        <td>Coloration des cheveux ou de la barbe.</td>
+                        <td>30chf</td>
+                    </tr>
+                    <tr>
+                        <td>Soin du Visage</td>
+                        <td>Soin hydratant et exfoliant pour le visage.</td>
+                        <td>25chf</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section Galerie -->
+        <section id="gallery" class="gallery">
+            <h2>Galerie</h2>
+            <table>
+                <tr>
+                    <td><img src="images/1.png" alt="Barber 1" width="300"></td>
+                    <td><img src="images/2.png" alt="Barber 2" width="300"></td>
+                    <td><img src="images/3.png" alt="Barber 3" width="300"></td>
+                </tr>
+                <tr>
+                    <td><img src="images/4.png" alt="Barber 4" width="300"></td>
+                    <td><img src="images/5.png" alt="Barber 5" width="300"></td>
+                    <td><img src="images/6.png" alt="Barber 6" width="300"></td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Section Réservation -->
+        <section id="reservation" class="reservation">
+            <h2>Réserver une séance</h2>
+            <div id='calendar'></div>
+        </section>
+
+        <!-- Section Contact -->
+        <section id="contact" class="contact">
+            <h2>Contactez-nous</h2>
+            <p>Adresse: 243 Rue de rive, 1205 Genève</p>
+            <p>Téléphone: 022 354 47 64</p>
+            <p>Email: contact@dindinhobarber.ch</p>
+            <br>
+            <br>
+        </section>
+    </div>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; 2024 Didinho Barber. Tous droits réservés.</p>
+    </footer>
+
+</body>
+
+</html>
